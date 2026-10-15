@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="pensaer.pin">
+<meta name="apple-mobile-web-app-title" content="pin.">
 <meta name="theme-color" content="#F2F2F0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <meta name="robots" content="noindex">
-<title>pensaer.pin</title>
-<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAAAAADH8yjkAAADoUlEQVR42u3YT2gcdRQH8O97b2Z3s5tNuk3A0iKisRVaQRBBo2iloPUgePDQYlHEFgTRgwcVvIg2IurBKh5qUbRFpREKKhUKoqQVMYqpfzBKKeKhKEXcapIm252Z956H3cVFrDqTzEGZPe3MMPv5zfs3M0sN5PthFEABFEABFEABFEABFEAB5AMQ5QowqwnlB3BrsRrOJZwXwIub3p7+5PlqlOIaqJFm/RveHwXw8W1KuVwBRQ+NRm7xdXfOB3kA1F53k4fEZGOWTw743Fl3wCnJJ8le+nk/myZCH4X+r8+SgTTC8U2XMdPEy0O2/CoiAPBO45J1VkyJ3XFLfPC9Qe8d7kbAMgBGAJjjFgNWKXUIsgVDMKxAZ5N9yQmOKltagMUBRO36g+OxfLD/dF0MgAdCQIvhAQEUxXrrvQR99XAyqKmA4MyOxyKxYM+XBy4GgFOv7YlLJgvXvmSs4eQT5XWTA27h1O5XbmQA+Ozh6bqmAn65/wUAaJbqCnJifLgtCmnu5sMAMLMZl84IgHO/rTEjcuKFrV/ULFWZJhab2Ug9BlzY4y2vqwFqaokxQ5dMzSprjANm4bj+uKfsA2JmZvdQRBwUJlt3zktvb++wgb47SQAC33x5i7M0Gr25875JMoD9gVUJ9VUwAONvttxw1SOJgbw01qb0gOHRHQf2bX+SDYxLruitsdsVTmfvmXJ5ZooVQCnDqFA+9vRoY2T1UzNsUB6Put11KuYOcGJ21EL+HN2myxCiSaIkDpbegoNwUW/vae1KTXO4a+ZhJz4bGmB8prNJfz6HvD8lGUJEV7cFEF0LAIjOEwXPDBDuHm6F4cLaXWAA36Z8YPlngG3jXm42q3svNHJZOlaxDMDf3lzZtl15tDI+ZgyTr07W2isNgHT9esAYDkwk5CsPSExEDCXZfWS1wdVJoYCruqFzbzZVmFsGwOnH4AKoqwienWiooCSAYAgeDAFAgwB4XQSCiqcHTPa98eL1NUCPPndkyOHhT4dAFk6FPH9wwLw0LQ4rf/puwiY/lDxDiMrf377xmvri19O2SgGrnNgOAEHVm3cBANUcVnvnEACUq5YBcKnPHneUa6QA4GEZANzAw90vgFepbwKmBGBWHQSst7g/5o72z9zsVYS+H//PvUK5u3uOAJGQEC0fOF8ONEpEA10+8NfPRaT1EQdo7lfxXABQkgBAIHmFyIOwk+nccrAiFVT8GVIABVAABVAABVAABfB/An4HnJyAL8iB7CMAAAAASUVORK5CYII=">
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAAAAADH8yjkAAADoUlEQVR42u3YT2gcdRQH8O97b2Z3s5tNuk3A0iKisRVaQRBBo2iloPUgePDQYlHEFgTRgwcVvIg2IurBKh5qUbRFpREKKhUKoqQVMYqpfzBKKeKhKEXcapIm252Z956H3cVFrDqTzEGZPe3MMPv5zfs3M0sN5PthFEABFEABFEABFEABFEAB5AMQ5QowqwnlB3BrsRrOJZwXwIub3p7+5PlqlOIaqJFm/RveHwXw8W1KuVwBRQ+NRm7xdXfOB3kA1F53k4fEZGOWTw743Fl3wCnJJ8le+nk/myZCH4X+r8+SgTTC8U2XMdPEy0O2/CoiAPBO45J1VkyJ3XFLfPC9Qe8d7kbAMgBGAJjjFgNWKXUIsgVDMKxAZ5N9yQmOKltagMUBRO36g+OxfLD/dF0MgAdCQIvhAQEUxXrrvQR99XAyqKmA4MyOxyKxYM+XBy4GgFOv7YlLJgvXvmSs4eQT5XWTA27h1O5XbmQA+Ozh6bqmAn65/wUAaJbqCnJifLgtCmnu5sMAMLMZl84IgHO/rTEjcuKFrV/ULFWZJhab2Ug9BlzY4y2vqwFqaokxQ5dMzSprjANm4bj+uKfsA2JmZvdQRBwUJlt3zktvb++wgb47SQAC33x5i7M0Gr25875JMoD9gVUJ9VUwAONvttxw1SOJgbw01qb0gOHRHQf2bX+SDYxLruitsdsVTmfvmXJ5ZooVQCnDqFA+9vRoY2T1UzNsUB6Put11KuYOcGJ21EL+HN2myxCiSaIkDpbegoNwUW/vae1KTXO4a+ZhJz4bGmB8prNJfz6HvD8lGUJEV7cFEF0LAIjOEwXPDBDuHm6F4cLaXWAA36Z8YPlngG3jXm42q3svNHJZOlaxDMDf3lzZtl15tDI+ZgyTr07W2isNgHT9esAYDkwk5CsPSExEDCXZfWS1wdVJoYCruqFzbzZVmFsGwOnH4AKoqwienWiooCSAYAgeDAFAgwB4XQSCiqcHTPa98eL1NUCPPndkyOHhT4dAFk6FPH9wwLw0LQ4rf/puwiY/lDxDiMrf377xmvri19O2SgGrnNgOAEHVm3cBANUcVnvnEACUq5YBcKnPHneUa6QA4GEZANzAw90vgFepbwKmBGBWHQSst7g/5o72z9zsVYS+H//PvUK5u3uOAJGQEC0fOF8ONEpEA10+8NfPRaT1EQdo7lfxXABQkgBAIHmFyIOwk+nccrAiFVT8GVIABVAABVAABVAABfB/An4HnJyAL8iB7CMAAAAASUVORK5CYII=">
+<title>pin.</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTg5IDUxODkiPjxyZWN0IHdpZHRoPSI1MTg5IiBoZWlnaHQ9IjUxODkiIHJ4PSIxMTQyIiBmaWxsPSIjMTQxNDE0Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTg2IDk5NykiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMDQgMjQwMkgzOTlWMTgyNkg0MDJDNDYzIDE5NDUgNTcwIDIwMDYgNzA5IDIwMDZDOTg1IDIwMDYgMTE2NiAxNzg2IDExNjYgMTQ1NUMxMTY2IDExMzEgOTgxIDkwNiA3MTEgOTA2QzU3NCA5MDYgNDYzIDk2MSAzOTggMTA3MUgzOTVWOTI4SDEwNFpNNjMzIDE3NjZDNDg0IDE3NjYgMzg1IDE2NDQgMzg1IDE0NTVDMzg1IDEyNjcgNDg0IDExNDQgNjMzIDExNDRDNzc2IDExNDQgODY5IDEyNTcgODY5IDE0NTVDODY5IDE2NTMgNzc2IDE3NjYgNjMzIDE3NjZaIE0xMjU2IDE5ODRIMTU1MVY5MjhIMTI1NlpNMTQwMyA3OTVDMTUwMCA3OTUgMTU3MSA3MjggMTU3MSA2MzhDMTU3MSA1NDggMTUwMCA0ODEgMTQwMyA0ODFDMTMwNiA0ODEgMTIzNSA1NDggMTIzNSA2MzhDMTIzNSA3MjggMTMwNiA3OTUgMTQwMyA3OTVaIE0xOTgzIDEzOTdDMTk4MyAxMjMzIDIwNjggMTE2MCAyMTkwIDExNjBDMjMxMyAxMTYwIDIzODQgMTIzNSAyMzg0IDEzNzdWMTk4NEgyNjc4VjEzMjNDMjY3OCAxMDU2IDI1MzMgOTA2IDIzMDggOTA2QzIxNTYgOTA2IDIwNDkgOTc0IDE5NzggMTA5NFY5MjhIMTY4OFYxOTg0SDE5ODNaIi8+PGNpcmNsZSBmaWxsPSIjRkY1NDMzIiBjeD0iMjk5OCIgY3k9IjE3NjkiIHI9IjIxNSIvPjwvZz48L3N2Zz4=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTg5IDUxODkiPjxyZWN0IHdpZHRoPSI1MTg5IiBoZWlnaHQ9IjUxODkiIHJ4PSIxMTQyIiBmaWxsPSIjMTQxNDE0Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTg2IDk5NykiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMDQgMjQwMkgzOTlWMTgyNkg0MDJDNDYzIDE5NDUgNTcwIDIwMDYgNzA5IDIwMDZDOTg1IDIwMDYgMTE2NiAxNzg2IDExNjYgMTQ1NUMxMTY2IDExMzEgOTgxIDkwNiA3MTEgOTA2QzU3NCA5MDYgNDYzIDk2MSAzOTggMTA3MUgzOTVWOTI4SDEwNFpNNjMzIDE3NjZDNDg0IDE3NjYgMzg1IDE2NDQgMzg1IDE0NTVDMzg1IDEyNjcgNDg0IDExNDQgNjMzIDExNDRDNzc2IDExNDQgODY5IDEyNTcgODY5IDE0NTVDODY5IDE2NTMgNzc2IDE3NjYgNjMzIDE3NjZaIE0xMjU2IDE5ODRIMTU1MVY5MjhIMTI1NlpNMTQwMyA3OTVDMTUwMCA3OTUgMTU3MSA3MjggMTU3MSA2MzhDMTU3MSA1NDggMTUwMCA0ODEgMTQwMyA0ODFDMTMwNiA0ODEgMTIzNSA1NDggMTIzNSA2MzhDMTIzNSA3MjggMTMwNiA3OTUgMTQwMyA3OTVaIE0xOTgzIDEzOTdDMTk4MyAxMjMzIDIwNjggMTE2MCAyMTkwIDExNjBDMjMxMyAxMTYwIDIzODQgMTIzNSAyMzg0IDEzNzdWMTk4NEgyNjc4VjEzMjNDMjY3OCAxMDU2IDI1MzMgOTA2IDIzMDggOTA2QzIxNTYgOTA2IDIwNDkgOTc0IDE5NzggMTA5NFY5MjhIMTY4OFYxOTg0SDE5ODNaIi8+PGNpcmNsZSBmaWxsPSIjRkY1NDMzIiBjeD0iMjk5OCIgY3k9IjE3NjkiIHI9IjIxNSIvPjwvZz48L3N2Zz4=">
 <style>
 /* Layout: an iOS-style app shell. Translucent nav bar, large titles, inset grouped lists, bottom tab bar.
    Sheets rise from the bottom on phones and dock right on desktop. Monochrome ink; colour only for status. */
@@ -56,8 +56,8 @@ button{cursor:pointer}
 .wrap{max-width:720px;margin:0 auto;padding:4px 16px 120px}
 .wrap.wide{max-width:1040px}
 .large{font:700 34px/1.12 var(--fd);letter-spacing:-.025em;margin:6px 4px 18px;text-wrap:balance}
-.logo{display:block;height:22px;width:auto}
-.logo.lg{height:36px}
+.logo{display:block;height:30px;width:auto}
+.logo.lg{height:58px}
 .group-h{font-size:13px;color:var(--ink2);text-transform:uppercase;letter-spacing:.01em;margin:0 16px 7px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .group-h button{border:0;background:none;color:var(--tint);font-size:15px;text-transform:none;padding:0}
 .group{background:var(--cell);border-radius:12px;overflow:hidden;margin:0 0 30px}
@@ -256,8 +256,8 @@ textarea.cfull{resize:vertical;min-height:70px;line-height:1.4}
 .page{width:210mm;min-height:297mm;margin:0 auto 18px;background:#fff;color:#121211;box-shadow:0 4px 20px rgba(0,0,0,.35);padding:16mm 15mm 18mm;position:relative;font:9.5pt/1.45 var(--f);letter-spacing:0;transform-origin:top center}
 @media (max-width:840px){.page{zoom:calc((100vw - 24px) / 210mm)}}
 .rp-head{display:flex;justify-content:space-between;align-items:center;border-bottom:.6pt solid #121211;padding-bottom:3mm;margin-bottom:7mm;font-size:7.5pt;color:#6b6b6d}
-.rp-head img{height:3.6mm}
-.rp-cover-logo{height:7mm;margin-bottom:58mm}
+.rp-head img{height:5.5mm}
+.rp-cover-logo{height:12mm;margin-bottom:53mm}
 .rp-label{font-size:6.5pt;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#6b6b6d}
 .rp-title{font:700 26pt/1.1 var(--fd);letter-spacing:-.02em;margin:3mm 0 2mm}
 .rp-sub{font-size:14pt;color:#6b6b6d;margin-bottom:9mm}
@@ -366,7 +366,7 @@ const SKEYS = Object.keys(STATUS);
 const PRINT = { open:'#D4432D', notified:'#C4830C', fixed:'#5B57D6', closed:'#2F9B5C' };
 const PRIORITY = ['Low', 'Medium', 'High'];
 const TRADES = ['General','Architectural finishes','Joinery','Doors & ironmongery','Windows & glazing','Drylining & plaster','Decoration','Flooring','Tiling','Sanitaryware & plumbing','Electrical','Mechanical & ventilation','Fire stopping','Roofing','External works'];
-const KIND = { status:'Update', note:'Pensaer note', notice:'Issued', reply:'Reply' };
+const KIND = { status:'Update', note:'Note', notice:'Issued', reply:'Reply' };
 const normStatus = s => s === 'progress' ? 'notified' : s === 'ready' ? 'fixed' : (STATUS[s] ? s : 'open');
 
 const IP = {
@@ -390,7 +390,7 @@ const IP = {
 };
 const icon = (n, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" aria-hidden="true">${IP[n]}</svg>`;
 const chev = () => icon('chev', 'chev');
-const LOGO = 'data:image/png;base64,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';
+const LOGO = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgNDc3IDMyMTcgMTkyOSI+PHBhdGggZmlsbD0iIzExMSIgZD0iTTEwNCAyNDAySDM5OVYxODI2SDQwMkM0NjMgMTk0NSA1NzAgMjAwNiA3MDkgMjAwNkM5ODUgMjAwNiAxMTY2IDE3ODYgMTE2NiAxNDU1QzExNjYgMTEzMSA5ODEgOTA2IDcxMSA5MDZDNTc0IDkwNiA0NjMgOTYxIDM5OCAxMDcxSDM5NVY5MjhIMTA0Wk02MzMgMTc2NkM0ODQgMTc2NiAzODUgMTY0NCAzODUgMTQ1NUMzODUgMTI2NyA0ODQgMTE0NCA2MzMgMTE0NEM3NzYgMTE0NCA4NjkgMTI1NyA4NjkgMTQ1NUM4NjkgMTY1MyA3NzYgMTc2NiA2MzMgMTc2NlogTTEyNTYgMTk4NEgxNTUxVjkyOEgxMjU2Wk0xNDAzIDc5NUMxNTAwIDc5NSAxNTcxIDcyOCAxNTcxIDYzOEMxNTcxIDU0OCAxNTAwIDQ4MSAxNDAzIDQ4MUMxMzA2IDQ4MSAxMjM1IDU0OCAxMjM1IDYzOEMxMjM1IDcyOCAxMzA2IDc5NSAxNDAzIDc5NVogTTE5ODMgMTM5N0MxOTgzIDEyMzMgMjA2OCAxMTYwIDIxOTAgMTE2MEMyMzEzIDExNjAgMjM4NCAxMjM1IDIzODQgMTM3N1YxOTg0SDI2NzhWMTMyM0MyNjc4IDEwNTYgMjUzMyA5MDYgMjMwOCA5MDZDMjE1NiA5MDYgMjA0OSA5NzQgMTk3OCAxMDk0VjkyOEgxNjg4VjE5ODRIMTk4M1oiLz48Y2lyY2xlIGZpbGw9IiMxMTEiIGN4PSIyOTk4IiBjeT0iMTc2OSIgcj0iMjE1Ii8+PC9zdmc+';
 
 function toast(msg, ms = 2800){ const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(() => t.hidden = true, ms); }
 function busy(msg){ $('#busyText').textContent = msg; $('#busy').hidden = false; }
@@ -420,7 +420,7 @@ async function copy(text){ try { await navigator.clipboard.writeText(text); retu
 
 /* ---------- State ---------- */
 const S = {
-  session:null, me:null, ready:false, view:'home', projects:[], allStats:{},
+  session:null, me:null, practice:'', ready:false, view:'home', projects:[], allStats:{},
   pid:null, parties:[], plans:[], snags:[], activity:[], loaded:false,
   tab:'plans', planId:null, placing:false, draft:null, showClosed:false,
   f:{ q:'', seg:'all', party:'all', trade:'all', sort:'num' },
@@ -433,7 +433,9 @@ const partyName = id => S.parties.find(p => p.id === id)?.name || (id ? 'Removed
 const planName = id => S.plans.find(p => p.id === id)?.name || '';
 const refOf = s => '#' + String(s.num || 0).padStart(3, '0');
 const isLate = s => s.due && s.status !== 'closed' && s.due < todayISO();
-const author = () => S.me?.name || S.me?.email || 'Pensaer';
+const author = () => S.me?.name || S.me?.email || '';
+const firm = () => S.practice || 'the architect';
+const Firm = () => S.practice || 'The architect';
 const stats = list => { const o = { total:list.length, open:0, notified:0, fixed:0, closed:0, overdue:0 }; list.forEach(s => { o[s.status]++; if (isLate(s)) o.overdue++; }); return o; };
 
 /* ---------- Media ---------- */
@@ -580,6 +582,8 @@ async function start(){
   try {
     await loadMe();
     if (!S.me) return renderSignIn();
+    const { data: cfg } = await sb.from('settings').select('practice_name').eq('id', 1).maybeSingle();
+    S.practice = cfg?.practice_name || '';
     await loadProjects();
     subscribe();
     S.ready = true;
@@ -587,7 +591,7 @@ async function start(){
     if (hash && S.projects.find(p => p.id === hash)) openProject(hash); else renderHome();
   } catch (e){
     fail(e);
-    $('#app').innerHTML = `<div class="center-msg"><h2>Can't reach pensaer.pin</h2><p>Check your connection, then reload this page.</p></div>`;
+    $('#app').innerHTML = `<div class="center-msg"><h2>Can't reach pin.</h2><p>Check your connection, then reload this page.</p></div>`;
   }
 }
 
@@ -595,7 +599,7 @@ async function start(){
 function renderSignIn(err = ''){
   S.view = 'signin';
   $('#app').innerHTML = `<main class="scroll"><div class="signin">
-    <img class="logo lg" src="${LOGO}" alt="pensaer.pin">
+    <img class="logo lg" src="${LOGO}" alt="pin.">
     <div><h1>Snagging, from site walk to report.</h1><p>Sign in to view and respond to defects.</p></div>
     <form id="signInForm">
       <div class="fields">
@@ -605,7 +609,7 @@ function renderSignIn(err = ''){
       <button class="btn" type="submit" id="si-btn">Sign In</button>
       ${err ? `<p class="err">${esc(err)}</p>` : ''}
     </form>
-    <p style="font-size:14px">No account? Ask your contact at Pensaer to give you portal access.</p>
+    <p style="font-size:14px">No account? Ask the architect who sent you here to give you access.</p>
   </div></main>`;
   setTimeout(() => $('#si-email')?.focus(), 50);
 }
@@ -627,13 +631,13 @@ function renderHome(){
   S.view = 'home'; S.pid = null; history.replaceState(null, '', location.pathname);
   const isTeam = team();
   const body = !S.projects.length
-    ? `<div class="center-msg">${icon('list')}<h2>${isTeam ? 'No Projects Yet' : 'Nothing Issued to You Yet'}</h2><p>${isTeam ? 'Create a project here or in the iPhone app.' : 'Defects issued to you by Pensaer will appear here.'}</p>${isTeam ? `<div class="actions"><button class="btn" data-act="new-project">New Project</button></div>` : ''}</div>`
+    ? `<div class="center-msg">${icon('list')}<h2>${isTeam ? 'No Projects Yet' : 'Nothing Issued to You Yet'}</h2><p>${isTeam ? 'Create a project here or in the iPhone app.' : `Defects issued to you by ${esc(firm())} will appear here.`}</p>${isTeam ? `<div class="actions"><button class="btn" data-act="new-project">New Project</button></div>` : ''}</div>`
     : `<h1 class="large">${isTeam ? 'Projects' : 'Your Defects'}</h1>
        <div class="group">${S.projects.map(p => { const st = stats(S.allStats[p.id] || []); const out = st.total - st.closed;
          return `<button class="cell" data-act="open-project" data-id="${p.id}"><span class="grow"><b style="font-weight:600">${esc(p.name)}</b><span class="sub">${esc([p.job, p.address || p.client].filter(Boolean).join(' · ') || ' ')}</span>${bar4(st)}</span>
            <span class="trail">${st.overdue ? `<span class="late">${st.overdue} late · </span>` : ''}${out} ${isTeam ? 'open' : 'to do'}</span>${chev()}</button>`; }).join('')}</div>`;
   $('#app').innerHTML = `
-    <header class="nav clear"><div class="nav-l"><img class="logo" src="${LOGO}" alt="pensaer.pin" style="margin-left:8px;height:18px"></div><div class="nav-t"></div>
+    <header class="nav clear"><div class="nav-l"><img class="logo" src="${LOGO}" alt="pin." style="margin-left:10px;height:26px"></div><div class="nav-t"></div>
       <div class="nav-r"><button class="tbtn" data-act="account" aria-label="Account">${icon('user')}</button>${isTeam ? `<button class="tbtn" data-act="new-project" aria-label="New project">${icon('plus')}</button>` : ''}</div></header>
     <main class="scroll"><div class="wrap">${body}</div></main>`;
 }
@@ -829,10 +833,10 @@ function renderSheet(){
     ${plan && s.x != null ? `<div class="group"><button class="cell loccell" data-act="show-on-plan"><canvas id="locCanvas" width="112" height="112"></canvas><span class="grow">${esc(plan.name)}<span class="sub">Pinned on drawing</span></span>${chev()}</button></div>` : ''}
     ${isNew ? '' : `
       ${ed && s.party_id && s.status !== 'closed' ? `<div class="group"><button class="cell" data-act="notify"><span class="grow">${s.notified_at ? 'Notify Again' : 'Notify'} ${esc(partyName(s.party_id))}<span class="sub">Records the notice in the trail and copies a message with the portal link</span></span>${icon('send')}</button></div>` : ''}
-      ${canReply ? `<div class="group"><button class="cell primary" data-act="mark-fixed">Mark as Fixed…</button></div><p class="group-f">Add a note and photos of the completed work. Pensaer will inspect and close it.</p>` : ''}
+      ${canReply ? `<div class="group"><button class="cell primary" data-act="mark-fixed">Mark as Fixed…</button></div><p class="group-f">Add a note and photos of the completed work. ${esc(Firm())} will inspect and close it.</p>` : ''}
       <div class="group-h"><span>Correspondence trail</span></div>
       <div class="group">
-        ${ed || canReply ? `<div class="compose"><textarea id="f-note" rows="1" placeholder="${ed ? 'Add a note or record correspondence' : 'Reply to Pensaer'}"></textarea>${micBtn('f-note', true)}
+        ${ed || canReply ? `<div class="compose"><textarea id="f-note" rows="1" placeholder="${ed ? 'Add a note or record correspondence' : `Reply to ${esc(firm())}`}"></textarea>${micBtn('f-note', true)}
           ${ed ? `<select id="f-kind" class="round ghost" style="width:auto;border-radius:999px;padding:0 10px;font-size:13px" aria-label="Entry type"><option value="note">Note</option><option value="reply">From party</option></select>` : ''}
           <button class="round" data-act="post" aria-label="Add to trail">${icon('up')}</button></div>` : ''}
         <div id="sh-trail" style="${ed || canReply ? 'border-top:.5px solid var(--sep)' : ''}">${trailHTML(s) || '<div class="cell" style="color:var(--ink2)">No entries yet</div>'}</div>
@@ -949,7 +953,7 @@ async function notify(){
   const pr = project();
   const lines = [`${pr.name} – defect ${refOf(s)}`, '', s.title, s.location ? `Location: ${s.location}` : '', s.notes ? '\n' + s.notes : '',
     s.remedy ? `\nRemedial method:\n${s.remedy}` : '', s.due ? `\nPlease complete by ${fmtDY(s.due)}.` : '',
-    `\nView, reply and mark it fixed here: ${PORTAL}#${pr.id}`, '', author(), 'Pensaer'].filter(x => x !== '');
+    `\nView, reply and mark it fixed here: ${PORTAL}#${pr.id}`, '', author(), S.practice].filter(x => x);
   const text = lines.join('\n'), ok = await copy(text);
   refreshSheet();
   await dialog({ title:`Notified ${p.name}`, body: ok ? 'The message is copied. Paste it into an email or message to send it.' : 'Copy this message and send it to them.', pre:text });
@@ -970,7 +974,7 @@ async function submitFixed(){
   const { error } = await sb.rpc('party_mark_fixed', { p_snag:S.sheet.id, p_note:note, p_photos:S.sheet.photos });
   unbusy();
   if (error) return fail(error, "Couldn't send that. Try again.");
-  const id = S.sheet.id; await loadProject(S.pid); S.sheet = { kind:'snag', id }; renderSheet(); onData(); toast('Sent to Pensaer');
+  const id = S.sheet.id; await loadProject(S.pid); S.sheet = { kind:'snag', id }; renderSheet(); onData(); toast(`Sent to ${firm()}`);
 }
 
 /* ---------- Photo viewer + annotation ---------- */
@@ -1093,12 +1097,12 @@ async function buildReport(list, title, addressee){
     }
   }
   unbusy();
-  const head = `<div class="rp-head"><img src="${LOGO}" alt="pensaer.pin"><span>${esc(pr.name)} · ${esc(title)}</span></div>`;
-  const foot = `<div class="rp-foot"><span>${esc(pr.name)}${pr.job ? ` · Job ${esc(pr.job)}` : ''} · ${date}</span><span>pensaer.pin</span></div>`;
+  const head = `<div class="rp-head"><img src="${LOGO}" alt="pin."><span>${esc(pr.name)} · ${esc(title)}</span></div>`;
+  const foot = `<div class="rp-foot"><span>${esc(pr.name)}${pr.job ? ` · Job ${esc(pr.job)}` : ''} · ${date}</span><span>${esc(S.practice ? S.practice + ' · ' : '')}pin.</span></div>`;
   const byParty = {}; list.forEach(s => (byParty[s.party_id || ''] ||= []).push(s));
-  const meta = [['Job number', pr.job], ['Client', pr.client], ['Site', pr.address], ['Date of issue', date], ['Prepared by', `${author()}, Pensaer`], ['Scope', title]].filter(m => m[1]);
+  const meta = [['Job number', pr.job], ['Client', pr.client], ['Site', pr.address], ['Date of issue', date], ['Prepared by', [author(), S.practice].filter(Boolean).join(', ')], ['Scope', title]].filter(m => m[1]);
   let html = `<section class="page">
-    <img class="rp-cover-logo" src="${LOGO}" alt="pensaer.pin">
+    <img class="rp-cover-logo" src="${LOGO}" alt="pin.">
     <div class="rp-label">Defects report</div><div class="rp-title">${esc(pr.name)}</div><div class="rp-sub">${esc(title)}</div>
     ${addressee ? `<div class="rp-issued"><div class="rp-label">Issued to</div><b>${esc(addressee.name)}${addressee.role ? ` · ${esc(addressee.role)}` : ''}</b><small>View, reply and mark items fixed at ${esc(PORTAL)}</small></div>` : ''}
     <div class="rp-meta">${meta.map(([k, v]) => `<div><div class="rp-label">${k}</div><span>${esc(v)}</span></div>`).join('')}</div>
@@ -1131,7 +1135,7 @@ function csv(){
   const rows = [['Ref','Title','Status','Priority','Trade','Responsible','Location','Drawing','Due','Overdue','Opened','Notified','Fixed','Closed','Description','Remedial method']]
     .concat(repList().map(s => [refOf(s), s.title, STATUS_LONG[s.status], s.priority, s.trade, partyName(s.party_id), s.location, planName(s.plan_id), s.due, isLate(s) ? 'Yes' : '', fmtDY(s.created_at), s.notified_at ? fmtDY(s.notified_at) : '', s.fixed_at ? fmtDY(s.fixed_at) : '', s.closed_at ? fmtDY(s.closed_at) : '', s.notes, s.remedy]));
   const blob = new Blob(['﻿' + rows.map(r => r.map(q).join(',')).join('\r\n')], { type:'text/csv' });
-  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `Pensaer – ${project().name} – Defects – ${todayISO()}.csv`; a.click();
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${S.practice ? S.practice + ' – ' : ''}${project().name} – Defects – ${todayISO()}.csv`; a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 2000);
 }
 async function issueTo(pid){
@@ -1143,7 +1147,7 @@ async function issueTo(pid){
   busy(`Issuing to ${p.name}`); await issue(list, p, `defects notice ${fmtDY(new Date())}`); unbusy();
   const pr = project(), due = list.map(s => s.due).filter(Boolean).sort()[0];
   const text = [`${pr.name}${pr.job ? ` (${pr.job})` : ''}`, '', `Please find attached ${list.length} defect${list.length === 1 ? '' : 's'} for your attention.`, due ? `The earliest is due by ${fmtDY(due)}.` : '',
-    '', 'You can view each item, reply, add photos and mark it fixed in the pensaer.pin portal:', `${PORTAL}#${pr.id}`, '', author(), 'Pensaer'].filter((x, i, a) => x !== '' || a[i - 1] !== '').join('\n');
+    '', 'You can view each item, reply, add photos and mark it fixed in pin.:', `${PORTAL}#${pr.id}`, '', author(), S.practice || ''].filter((x, i, a) => x !== '' || a[i - 1] !== '').join('\n').trim();
   await copy(text);
   await buildReport(list, `Defects notice: ${p.name}`, p);
   toast('Covering message copied. Print or save the notice as PDF.', 4500);
@@ -1180,7 +1184,7 @@ async function giveAccess(pid){
   const { data, error } = await sb.functions.invoke('invite', { body:{ email:p.email, name:p.name, role:'party' } });
   unbusy();
   if (error) return dialog({ title:"Couldn't give access", body:esc(await fnError(error)) });
-  const text = `pensaer.pin portal: ${PORTAL}\nEmail: ${data.email}\nTemporary password: ${data.password}`;
+  const text = `pin.: ${PORTAL}\nEmail: ${data.email}\nTemporary password: ${data.password}`;
   const ok = await copy(text);
   dialog({ title:`Portal access for ${p.name}`, body:(ok ? 'Copied. ' : '') + 'Send these details to them yourself; no email is sent.' + (data.created ? '' : ' Their password has been reset.'), pre:text });
 }
@@ -1238,8 +1242,8 @@ async function addPlan(file){
 }
 function renderAccount(){
   $('#sheetRoot').innerHTML = shell('short', `<div class="nav-l"></div><div class="nav-t">Account</div><div class="nav-r"><button class="tbtn b" data-act="close-sheet">Done</button></div>`, `
-    <div style="display:flex;justify-content:center;padding:8px 0 22px"><img class="logo" src="${LOGO}" alt="pensaer.pin" style="height:24px"></div>
-    <div class="group"><label class="cell"><span class="cl">Name</span><input class="cv" id="acc-name" value="${esc(S.me.name)}" placeholder="Your name"></label><div class="cell"><span class="cl">Email</span><span class="cv">${esc(S.me.email)}</span></div><div class="cell"><span class="cl">Access</span><span class="cv">${team() ? 'Pensaer team' : 'Responsible party'}</span></div></div>
+    <div style="display:flex;justify-content:center;padding:8px 0 22px"><img class="logo" src="${LOGO}" alt="pin." style="height:40px"></div>
+    <div class="group"><label class="cell"><span class="cl">Name</span><input class="cv" id="acc-name" value="${esc(S.me.name)}" placeholder="Your name"></label><div class="cell"><span class="cl">Email</span><span class="cv">${esc(S.me.email)}</span></div>${S.me.role === 'admin' ? `<label class="cell"><span class="cl">Practice</span><input class="cv" id="acc-practice" value="${esc(S.practice)}" placeholder="Your practice name"></label>` : (S.practice ? `<div class="cell"><span class="cl">Practice</span><span class="cv">${esc(S.practice)}</span></div>` : '')}<div class="cell"><span class="cl">Access</span><span class="cv">${team() ? 'Practice team' : 'Responsible party'}</span></div></div>
     <form class="group" id="pwForm"><label class="cell"><input class="cfull" id="pw1" type="password" autocomplete="new-password" placeholder="New password (8+ characters)" minlength="8"></label><label class="cell"><input class="cfull" id="pw2" type="password" autocomplete="new-password" placeholder="Confirm new password"></label><button class="cell center" type="submit">Change Password</button></form>
     ${S.me.role === 'admin' ? `<div class="group-h">Add a team member</div><form class="group" id="teamForm"><label class="cell"><input class="cfull" id="tm-name" placeholder="Name" required></label><label class="cell"><input class="cfull" id="tm-email" type="email" placeholder="Work email" required></label><button class="cell center" type="submit">Add Team Member</button></form><p class="group-f">They get full access to every project. You'll be shown a temporary password to pass on.</p>` : ''}
     <div class="group"><button class="cell danger" data-act="sign-out">Sign Out</button></div>`, 'Account');
@@ -1313,7 +1317,7 @@ document.addEventListener('submit', async e => {
     if (id === 'teamForm'){ busy('Adding');
       const { data, error } = await sb.functions.invoke('invite', { body:{ email:$('#tm-email').value.trim().toLowerCase(), name:$('#tm-name').value.trim(), role:'team' } }); unbusy();
       if (error) return dialog({ title:"Couldn't add them", body:esc(await fnError(error)) });
-      const text = `pensaer.pin: ${PORTAL}\nEmail: ${data.email}\nTemporary password: ${data.password}`; const ok = await copy(text);
+      const text = `pin.: ${PORTAL}\nEmail: ${data.email}\nTemporary password: ${data.password}`; const ok = await copy(text);
       return dialog({ title:'Team member added', body:(ok ? 'Copied. ' : '') + 'Send these details to them yourself.', pre:text }); }
   } catch (err){ unbusy(); fail(err); }
 });
@@ -1326,6 +1330,7 @@ document.addEventListener('change', async e => {
     if (el.dataset.field && S.sheet?.kind === 'snag') return onField(el);
     if (el.dataset.pf){ const v = el.value.trim(), p = project(); if (el.dataset.pf === 'name' && !v) return; p[el.dataset.pf] = v; await sb.from('projects').update({ [el.dataset.pf]:v, updated_at:nowISO() }).eq('id', p.id); return; }
     if (el.dataset.planName){ await sb.from('plans').update({ name:el.value.trim(), updated_at:nowISO() }).eq('id', el.dataset.planName); return; }
+    if (id === 'acc-practice'){ const v = el.value.trim(); const { error } = await sb.from('settings').upsert({ id:1, practice_name:v, updated_at:nowISO() }); if (error) return fail(error, "Couldn't save the practice name."); S.practice = v; return toast('Saved'); }
     if (id === 'acc-name'){ S.me.name = el.value.trim(); await sb.from('profiles').update({ name:S.me.name }).eq('user_id', S.me.id); return toast('Saved'); }
     if (id === 'fParty'){ S.f.party = el.value; return renderSnagList(); }
     if (id === 'rParty'){ S.rep.party = el.value; return renderReportPreview(); }
