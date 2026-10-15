@@ -259,8 +259,8 @@ textarea.cfull{resize:vertical;min-height:70px;line-height:1.4}
 .page{width:210mm;min-height:297mm;margin:0 auto 18px;background:#fff;color:#121211;box-shadow:0 4px 20px rgba(0,0,0,.35);padding:16mm 15mm 18mm;position:relative;font:9.5pt/1.45 var(--f);letter-spacing:0;transform-origin:top center}
 @media (max-width:840px){.page{zoom:calc((100vw - 24px) / 210mm)}}
 .rp-head{display:flex;justify-content:space-between;align-items:center;border-bottom:.6pt solid #121211;padding-bottom:3mm;margin-bottom:7mm;font-size:7.5pt;color:#6b6b6d}
-.rp-head img{height:5.5mm}
-.rp-cover-logo{height:12mm;margin-bottom:53mm}
+.rp-head img{height:5.5mm;width:auto;flex:none}
+.rp-cover-logo{height:12mm;width:auto;max-width:none;margin-bottom:53mm;display:block}
 .rp-label{font-size:6.5pt;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#6b6b6d}
 .rp-title{font:700 26pt/1.1 var(--fd);letter-spacing:-.02em;margin:3mm 0 2mm}
 .rp-sub{font-size:14pt;color:#6b6b6d;margin-bottom:9mm}
@@ -284,6 +284,7 @@ textarea.cfull{resize:vertical;min-height:70px;line-height:1.4}
 .rp-rec{display:grid;grid-template-columns:15mm 1fr;border-bottom:.5pt solid #dcdcda;padding:0 0 5mm;margin:0 0 5mm;break-inside:avoid;page-break-inside:avoid;position:relative}
 .rp-rec::before{content:"";position:absolute;left:-3.5mm;top:.5mm;bottom:6mm;width:.7mm;background:var(--pp)}
 .rp-ref{font:600 11pt/1 var(--fm)}
+.rp-room{font:500 7.5pt/1.3 var(--fm);color:#6b6b6d;margin-top:1.2mm;word-break:break-all}
 .rp-high{font-size:6pt;font-weight:700;letter-spacing:.08em;color:#d4432d;margin-top:2mm}
 .rp-rt{display:flex;justify-content:space-between;gap:4mm;align-items:flex-start}
 .rp-rt h3{font:600 12pt/1.25 var(--fd);margin:0}
@@ -393,7 +394,7 @@ const IP = {
 };
 const icon = (n, cls = '') => `<svg class="ic ${cls}" viewBox="0 0 24 24" aria-hidden="true">${IP[n]}</svg>`;
 const chev = () => icon('chev', 'chev');
-const LOGO = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgNDc0IDMzMDkgMTkzMiI+PHBhdGggZmlsbD0iIzExMSIgZD0iTTk2IDI0MDJINDQwVjE4MjdINDQ0QzQ5OSAxOTQ0IDYwMyAyMDA3IDc0MiAyMDA3QzEwMTkgMjAwNyAxMTk4IDE3ODggMTE5OCAxNDU0QzExOTggMTEzMSAxMDEyIDkwNSA3NDUgOTA1QzYwOCA5MDUgNTA0IDk1OSA0NDEgMTA2Nkg0MzZWOTI4SDk2Wk02NDUgMTczMkM1MTUgMTczMiA0MjYgMTYyMyA0MjYgMTQ1NEM0MjYgMTI4NyA1MTUgMTE3OSA2NDUgMTE3OUM3NzIgMTE3OSA4NTAgMTI4MiA4NTAgMTQ1NEM4NTAgMTYyOCA3NzIgMTczMiA2NDUgMTczMlogTTEyNzUgMTk4NEgxNjE5VjkyOEgxMjc1Wk0xNDQ2IDgyNUMxNTU3IDgyNSAxNjM2IDc1MiAxNjM2IDY1MUMxNjM2IDU1MCAxNTU3IDQ3OCAxNDQ2IDQ3OEMxMzM2IDQ3OCAxMjU3IDU1MCAxMjU3IDY1MUMxMjU3IDc1MiAxMzM2IDgyNSAxNDQ2IDgyNVogTTIwODQgMTQxMEMyMDg0IDEyNjYgMjE1NCAxMTk5IDIyNjMgMTE5OUMyMzcyIDExOTkgMjQzNSAxMjY3IDI0MzUgMTM5MlYxOTg0SDI3NzlWMTMyMEMyNzc5IDEwNjAgMjY0NSA5MDUgMjQxNiA5MDVDMjI1NyA5MDUgMjE1MCA5NzggMjA4MCAxMDk5VjkyOEgxNzQwVjE5ODRIMjA4NFoiLz48Y2lyY2xlIGZpbGw9IiMxMTEiIGN4PSIzMDkwIiBjeT0iMTc2OSIgcj0iMjE1Ii8+PC9zdmc+';
+const LOGO = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii02MCA0MTQgMzQyOSAyMDUyIj48cGF0aCBmaWxsPSIjMTExIiBkPSJNOTYgMjQwMkg0NDBWMTgyN0g0NDRDNDk5IDE5NDQgNjAzIDIwMDcgNzQyIDIwMDdDMTAxOSAyMDA3IDExOTggMTc4OCAxMTk4IDE0NTRDMTE5OCAxMTMxIDEwMTIgOTA1IDc0NSA5MDVDNjA4IDkwNSA1MDQgOTU5IDQ0MSAxMDY2SDQzNlY5MjhIOTZaTTY0NSAxNzMyQzUxNSAxNzMyIDQyNiAxNjIzIDQyNiAxNDU0QzQyNiAxMjg3IDUxNSAxMTc5IDY0NSAxMTc5Qzc3MiAxMTc5IDg1MCAxMjgyIDg1MCAxNDU0Qzg1MCAxNjI4IDc3MiAxNzMyIDY0NSAxNzMyWiBNMTI3NSAxOTg0SDE2MTlWOTI4SDEyNzVaTTE0NDYgODI1QzE1NTcgODI1IDE2MzYgNzUyIDE2MzYgNjUxQzE2MzYgNTUwIDE1NTcgNDc4IDE0NDYgNDc4QzEzMzYgNDc4IDEyNTcgNTUwIDEyNTcgNjUxQzEyNTcgNzUyIDEzMzYgODI1IDE0NDYgODI1WiBNMjA4NCAxNDEwQzIwODQgMTI2NiAyMTU0IDExOTkgMjI2MyAxMTk5QzIzNzIgMTE5OSAyNDM1IDEyNjcgMjQzNSAxMzkyVjE5ODRIMjc3OVYxMzIwQzI3NzkgMTA2MCAyNjQ1IDkwNSAyNDE2IDkwNUMyMjU3IDkwNSAyMTUwIDk3OCAyMDgwIDEwOTlWOTI4SDE3NDBWMTk4NEgyMDg0WiIvPjxjaXJjbGUgZmlsbD0iIzExMSIgY3g9IjMwOTAiIGN5PSIxNzY5IiByPSIyMTUiLz48L3N2Zz4=';
 const BADGE = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAwIDEwMDAiPjxjaXJjbGUgY3g9IjUwMC4wIiBjeT0iNTAwLjAiIHI9IjUwMC4wIiBmaWxsPSIjMEMwQzBDIi8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTI2Ny4xIDY1OC44SDMyMS4yVjU2OC4zSDMyMS45QzMzMC41IDU4Ni44IDM0Ni45IDU5Ni43IDM2OC44IDU5Ni43QzQxMi4zIDU5Ni43IDQ0MC41IDU2Mi4yIDQ0MC41IDUwOS43QzQ0MC41IDQ1OC44IDQxMS4yIDQyMy4zIDM2OS4yIDQyMy4zQzM0Ny43IDQyMy4zIDMzMS4zIDQzMS44IDMyMS40IDQ0OC42SDMyMC42VjQyNi45SDI2Ny4xWk0zNTMuNSA1NTMuNEMzMzMuMCA1NTMuNCAzMTkuMCA1MzYuMiAzMTkuMCA1MDkuN0MzMTkuMCA0ODMuNCAzMzMuMCA0NjYuNCAzNTMuNSA0NjYuNEMzNzMuNSA0NjYuNCAzODUuNyA0ODIuNiAzODUuNyA1MDkuN0MzODUuNyA1MzcuMCAzNzMuNSA1NTMuNCAzNTMuNSA1NTMuNFogTTQ1Mi43IDU5My4xSDUwNi44VjQyNi45SDQ1Mi43Wk00NzkuNiA0MTAuN0M0OTcuMCA0MTAuNyA1MDkuNSAzOTkuMiA1MDkuNSAzODMuM0M1MDkuNSAzNjcuNCA0OTcuMCAzNTYuMSA0NzkuNiAzNTYuMUM0NjIuMyAzNTYuMSA0NDkuOCAzNjcuNCA0NDkuOCAzODMuM0M0NDkuOCAzOTkuMiA0NjIuMyA0MTAuNyA0NzkuNiA0MTAuN1ogTTU3OS45IDUwMi43QzU3OS45IDQ4MC4xIDU5MC45IDQ2OS41IDYwOC4wIDQ2OS41QzYyNS4yIDQ2OS41IDYzNS4xIDQ4MC4yIDYzNS4xIDQ5OS45VjU5My4xSDY4OS4yVjQ4OC42QzY4OS4yIDQ0Ny43IDY2OC4xIDQyMy4zIDYzMi4xIDQyMy4zQzYwNy4xIDQyMy4zIDU5MC4yIDQzNC44IDU3OS4yIDQ1My44VjQyNi45SDUyNS43VjU5My4xSDU3OS45WiIvPjxjaXJjbGUgY3g9IjczOC4yIiBjeT0iNTU5LjIiIHI9IjMzLjgiIGZpbGw9IiNGRjU0MzMiLz48L3N2Zz4=';
 
 function toast(msg, ms = 2800){ const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(() => t.hidden = true, ms); }
@@ -436,6 +437,8 @@ const project = () => S.projects.find(p => p.id === S.pid);
 const partyName = id => S.parties.find(p => p.id === id)?.name || (id ? 'Removed party' : 'Unassigned');
 const planName = id => S.plans.find(p => p.id === id)?.name || '';
 const refOf = s => '#' + String(s.num || 0).padStart(3, '0');
+const refFull = s => refOf(s) + (s.room ? ' · ' + s.room : '');
+const normRoom = v => String(v || '').trim().toUpperCase().replace(/\s+/g, '');
 const isLate = s => s.due && s.status !== 'closed' && s.due < todayISO();
 const author = () => S.me?.name || S.me?.email || '';
 const firm = () => S.practice || 'the architect';
@@ -760,7 +763,7 @@ function filtered(){
   const q = S.f.q.trim().toLowerCase();
   return S.snags.filter(s => (S.f.seg === 'all' || s.status === S.f.seg)
     && (S.f.party === 'all' || s.party_id === S.f.party)
-    && (!q || [s.title, s.notes, s.location, s.trade, refOf(s), partyName(s.party_id)].join(' ').toLowerCase().includes(q)))
+    && (!q || [s.title, s.notes, s.location, s.room, s.trade, refFull(s), partyName(s.party_id)].join(' ').toLowerCase().includes(q)))
     .sort((a, b) => a.num - b.num);
 }
 function renderSnagList(){
@@ -772,7 +775,7 @@ function renderSnagList(){
   const list = filtered();
   box.innerHTML = list.length ? `<div class="group-h"><span>${list.length} of ${S.snags.length}</span></div><div class="group">${list.map(s => `
     <button class="cell srow st-${s.status}" data-act="snag" data-id="${s.id}"><span class="dot"></span>
-      <span class="grow"><span class="srt">${esc(s.title || 'Untitled')}</span><span class="srs"><span class="ref">${refOf(s)}</span>  ${esc([s.location, team() ? partyName(s.party_id) : STATUS_LONG[s.status]].filter(Boolean).join(' · '))}</span></span>
+      <span class="grow"><span class="srt">${esc(s.title || 'Untitled')}</span><span class="srs"><span class="ref">${esc(refFull(s))}</span>  ${esc([s.location, team() ? partyName(s.party_id) : STATUS_LONG[s.status]].filter(Boolean).join(' · '))}</span></span>
       <span class="srr">${s.priority === 'High' ? '<span class="tag st-open">High</span>' : ''}${s.due && s.status !== 'closed' ? `<span class="${isLate(s) ? 'late' : ''}">${isLate(s) ? 'Overdue' : 'Due ' + fmtD(s.due)}</span>` : ''}</span>
       ${s.photo_keys[0] ? `<span class="thumb"><img data-key="${esc(s.photo_keys[0])}" alt=""></span>` : ''}</button>`).join('')}</div>`
     : `<div class="center-msg" style="padding-top:6vh"><p>No defects match.</p></div>`;
@@ -781,7 +784,7 @@ function renderSnagList(){
 
 /* ---------- Defect sheet ---------- */
 function openNew(pos){
-  S.draft = { id:uuid(), project_id:S.pid, num:0, title:'', notes:'', remedy:'', location:'', trade:'General', party_id:null, priority:'Medium', status:'open',
+  S.draft = { id:uuid(), project_id:S.pid, num:0, title:'', notes:'', remedy:'', room:'', location:'', trade:'General', party_id:null, priority:'Medium', status:'open',
     due:isoPlus(14), plan_id:pos?.plan_id || null, x:pos?.x ?? null, y:pos?.y ?? null, photo_keys:[] };
   S.sheet = { kind:'snag', id:null }; renderSheet(); setTimeout(() => $('#f-title')?.focus(), 300);
 }
@@ -813,7 +816,7 @@ function renderSheet(){
   const canReply = !ed && (s.status === 'notified' || s.status === 'fixed');
   const plan = S.plans.find(p => p.id === s.plan_id);
   const nav = isNew ? `<div class="nav-l"><button class="tbtn" data-act="close-sheet">Cancel</button></div><div class="nav-t">New Defect</div><div class="nav-r"><button class="tbtn b" data-act="create-snag">Add</button></div>`
-    : `<div class="nav-l"></div><div class="nav-t">${refOf(s)}</div><div class="nav-r"><button class="tbtn b" data-act="close-sheet">Done</button></div>`;
+    : `<div class="nav-l"></div><div class="nav-t">${esc(refFull(s))}</div><div class="nav-r"><button class="tbtn b" data-act="close-sheet">Done</button></div>`;
   root.innerHTML = shell('', nav, `
     <div style="padding:2px 4px 16px">
       ${isNew ? '' : `<div style="display:flex;gap:8px;align-items:center;margin-bottom:10px;flex-wrap:wrap" id="sh-meta">${metaHTML(s)}</div>`}
@@ -828,7 +831,8 @@ function renderSheet(){
     <div class="group"><label class="cell" style="align-items:flex-start"><textarea id="f-remedy" class="cfull" data-field="remedy" rows="3" placeholder="How the responsible party should put it right" ${dis}>${esc(s.remedy || '')}</textarea></label>
       ${ed ? `<div class="aibar"><button class="linkbtn" data-act="ai-remedy">${icon('sparkle')}Suggest method with AI</button></div>` : ''}</div>` : ''}
     <div class="group">
-      <label class="cell"><span class="cl">Location</span><input class="cv" id="f-location" data-field="location" placeholder="Room or area" value="${esc(s.location)}" ${dis}></label>
+      <label class="cell"><span class="cl">Room no.</span><input class="cv" id="f-room" data-field="room" placeholder="e.g. RM03.07" autocapitalize="characters" spellcheck="false" value="${esc(s.room || '')}" ${dis}></label>
+      <label class="cell"><span class="cl">Location</span><input class="cv" id="f-location" data-field="location" placeholder="Room name or area" value="${esc(s.location)}" ${dis}></label>
       <label class="cell"><span class="cl">Trade</span><select class="cv" id="f-trade" data-field="trade" ${dis}>${TRADES.map(t => `<option ${s.trade === t ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select>${ed ? chev() : ''}</label>
       <label class="cell"><span class="cl">Responsible</span><select class="cv" id="f-party" data-field="party_id" ${dis}><option value="">Unassigned</option>${S.parties.map(p => `<option value="${p.id}" ${s.party_id === p.id ? 'selected' : ''}>${esc(p.name)}</option>`).join('')}</select>${ed ? chev() : ''}</label>
       <label class="cell"><span class="cl">Due</span><input type="date" class="cv" id="f-due" data-field="due" value="${esc(s.due || '')}" ${dis}></label>
@@ -863,7 +867,8 @@ function autosize(t){ if (!t) return; t.style.height = 'auto'; t.style.height = 
 function refreshSheet(){
   const s = cur(); if (!s) return closeSheet();
   const a = document.activeElement;
-  ['title','notes','remedy','location','trade','due'].forEach(f => { const el = $('#f-' + f); if (el && el !== a && el.value !== (s[f] || '')) el.value = s[f] || ''; });
+  ['title','notes','remedy','room','location','trade','due'].forEach(f => { const el = $('#f-' + f); if (el && el !== a && el.value !== (s[f] || '')) el.value = s[f] || ''; });
+  const nt = $('#sheetRoot .nav-t'); if (nt && S.sheet?.id) nt.textContent = refFull(s);
   const p = $('#f-party'); if (p && p !== a) p.value = s.party_id || '';
   $('#sh-meta') && ($('#sh-meta').innerHTML = metaHTML(s));
   $$('#sh-status button').forEach(b => b.classList.toggle('on', b.dataset.s === s.status));
@@ -881,15 +886,17 @@ async function drawLoc(s){
 async function onField(el){
   const s = cur(), f = el.dataset.field; let v = el.value;
   if (f === 'party_id' || f === 'due') v = v || null;
+  if (f === 'room'){ v = normRoom(v); el.value = v; }
   if (!S.sheet.id){ s[f] = v; return; }
   if ((s[f] ?? null) === v || (s[f] || '') === (v || '') && f !== 'party_id') return;
   if (f === 'title' && !String(v).trim()){ el.value = s.title; return toast('A defect needs a description'); }
-  const log = { title:null, notes:'Description edited', remedy:'Remedial method updated', location:`Location: ${v}`, trade:`Trade: ${v}`,
+  const log = { title:null, notes:'Description edited', remedy:'Remedial method updated', location:`Location: ${v}`, room: v ? `Room: ${v}` : 'Room number removed', trade:`Trade: ${v}`,
     party_id:`Responsible: ${partyName(v)}`, due: v ? `Due: ${fmtDY(v)}` : 'Due date removed' }[f];
   await saveSnag(s, { [f]: v }, log);
 }
 async function createSnag(){
-  const s = S.draft; ['title','notes','remedy','location','trade','due'].forEach(f => { const el = $('#f-' + f); if (el) s[f] = el.value; });
+  const s = S.draft; ['title','notes','remedy','room','location','trade','due'].forEach(f => { const el = $('#f-' + f); if (el) s[f] = el.value; });
+  s.room = normRoom(s.room);
   s.party_id = $('#f-party')?.value || null; s.due = s.due || null; s.title = s.title.trim();
   if (!s.title) return toast('Describe the defect first');
   s.num = S.snags.reduce((m, x) => Math.max(m, x.num || 0), 0) + 1;
@@ -955,7 +962,7 @@ async function notify(){
   const s = cur(), p = S.parties.find(x => x.id === s.party_id); if (!p) return;
   await issue([s], p, `defect ${refOf(s)}`);
   const pr = project();
-  const lines = [`${pr.name} – defect ${refOf(s)}`, '', s.title, s.location ? `Location: ${s.location}` : '', s.notes ? '\n' + s.notes : '',
+  const lines = [`${pr.name} – defect ${refFull(s)}`, '', s.title, (s.room || s.location) ? `Location: ${[s.room, s.location].filter(Boolean).join(' · ')}` : '', s.notes ? '\n' + s.notes : '',
     s.remedy ? `\nRemedial method:\n${s.remedy}` : '', s.due ? `\nPlease complete by ${fmtDY(s.due)}.` : '',
     `\nView, reply and mark it fixed here: ${PORTAL}#${pr.id}`, '', author(), S.practice].filter(x => x);
   const text = lines.join('\n'), ok = await copy(text);
@@ -1121,9 +1128,9 @@ async function buildReport(list, title, addressee){
       const trail = R.trail ? S.activity.filter(a => a.snag_id === s.id && ((a.kind || 'status') !== 'status' || /^(Status|Reopened)/.test(a.text))).sort((a, b) => a.at.localeCompare(b.at)).slice(-8) : [];
       const imgs = [...(crops[s.id] ? [crops[s.id]] : []), ...(R.photos ? s.photo_keys.slice(0, crops[s.id] ? 3 : 4).map(k => S.urls.get(k)).filter(Boolean) : [])];
       const steps = [['Opened', s.created_at], ['Notified', s.notified_at], ['Fixed', s.fixed_at], ['Closed', s.closed_at]];
-      return `<article class="rp-rec" style="--pp:${PRINT[s.status]}"><div><div class="rp-ref">${refOf(s)}</div>${s.priority === 'High' ? '<div class="rp-high">HIGH</div>' : ''}</div><div>
+      return `<article class="rp-rec" style="--pp:${PRINT[s.status]}"><div><div class="rp-ref">${refOf(s)}</div>${s.room ? `<div class="rp-room">${esc(s.room)}</div>` : ''}${s.priority === 'High' ? '<div class="rp-high">HIGH</div>' : ''}</div><div>
         <div class="rp-rt"><h3>${esc(s.title)}</h3><span class="rp-st"><span class="rp-dot"></span>${STATUS[s.status]}${isLate(s) ? ' · <span style="color:#D4432D">Overdue</span>' : ''}</span></div>
-        <div class="rp-facts"><div><div class="rp-label">Location</div><span>${esc(s.location || '–')}</span></div><div><div class="rp-label">Responsible</div><span>${esc(partyName(s.party_id))}</span></div><div><div class="rp-label">Trade</div><span>${esc(s.trade)}</span></div><div><div class="rp-label">Due</div><span>${s.due ? fmtDY(s.due) : '–'}</span></div></div>
+        <div class="rp-facts"><div><div class="rp-label">Room</div><span>${esc([s.room, s.location].filter(Boolean).join(' · ') || '–')}</span></div><div><div class="rp-label">Responsible</div><span>${esc(partyName(s.party_id))}</span></div><div><div class="rp-label">Trade</div><span>${esc(s.trade)}</span></div><div><div class="rp-label">Due</div><span>${s.due ? fmtDY(s.due) : '–'}</span></div></div>
         ${s.plan_id ? `<div class="rp-dwg">Drawing: ${esc(planName(s.plan_id))}</div>` : ''}
         <div class="rp-steps">${steps.map(([l, d], i) => `<div class="${d ? 'on' : ''} ${steps[i + 1]?.[1] ? 'on-next' : ''}"><b>${l}</b><span>${d ? fmtDY(d) : '–'}</span></div>`).join('')}</div>
         ${s.notes ? `<p class="rp-p">${esc(s.notes)}</p>` : ''}
@@ -1136,8 +1143,8 @@ async function buildReport(list, title, addressee){
 }
 function csv(){
   const q = v => { const s = String(v ?? ''); return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
-  const rows = [['Ref','Title','Status','Priority','Trade','Responsible','Location','Drawing','Due','Overdue','Opened','Notified','Fixed','Closed','Description','Remedial method']]
-    .concat(repList().map(s => [refOf(s), s.title, STATUS_LONG[s.status], s.priority, s.trade, partyName(s.party_id), s.location, planName(s.plan_id), s.due, isLate(s) ? 'Yes' : '', fmtDY(s.created_at), s.notified_at ? fmtDY(s.notified_at) : '', s.fixed_at ? fmtDY(s.fixed_at) : '', s.closed_at ? fmtDY(s.closed_at) : '', s.notes, s.remedy]));
+  const rows = [['Ref','Room','Title','Status','Priority','Trade','Responsible','Location','Drawing','Due','Overdue','Opened','Notified','Fixed','Closed','Description','Remedial method']]
+    .concat(repList().map(s => [refOf(s), s.room || '', s.title, STATUS_LONG[s.status], s.priority, s.trade, partyName(s.party_id), s.location, planName(s.plan_id), s.due, isLate(s) ? 'Yes' : '', fmtDY(s.created_at), s.notified_at ? fmtDY(s.notified_at) : '', s.fixed_at ? fmtDY(s.fixed_at) : '', s.closed_at ? fmtDY(s.closed_at) : '', s.notes, s.remedy]));
   const blob = new Blob(['﻿' + rows.map(r => r.map(q).join(',')).join('\r\n')], { type:'text/csv' });
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${S.practice ? S.practice + ' – ' : ''}${project().name} – Defects – ${todayISO()}.csv`; a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 2000);
