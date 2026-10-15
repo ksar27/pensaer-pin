@@ -919,9 +919,20 @@ async function addPhotos(files){
 }
 
 /* ---------- AI ---------- */
+const AI_KEY = 'pin.aiConsent.anthropic.v1';
+function aiOn(){ try { return localStorage.getItem(AI_KEY) === 'yes'; } catch (e) { return false; } }
+async function aiConsent(){
+  try { if (localStorage.getItem(AI_KEY) === 'yes') return true; } catch (e) {}
+  const ok = await dialog({ title:'Use AI assist?',
+    body:"To suggest wording and a remedial method, <b>pin.</b> sends this snag\u2019s title, description, location and trade to Anthropic, the company that makes the Claude AI model, through <b>pin.</b>\u2019s server. Photos, drawings, room numbers, names and contact details are not sent. <a href=\"https://ksar27.github.io/pin-site/#privacy\" target=\"_blank\" rel=\"noopener\">Privacy policy</a>",
+    actions:[{ label:'Not now', value:false }, { label:'Allow AI assist', primary:true, value:true }] });
+  if (ok === true){ try { localStorage.setItem(AI_KEY, 'yes'); } catch (e) {} }
+  return ok === true;
+}
 async function ai(mode){
   const s = cur(); ['title','notes','location'].forEach(f => { const el = $('#f-' + f); if (el) s[f] = el.value; });
   if (!s.title.trim()) return toast('Describe the defect first');
+  if (!(await aiConsent())) return;
   busy(mode === 'refine' ? 'Refining with AI' : 'Writing a remedial method');
   const { data, error } = await sb.functions.invoke('ai', { body:{ mode, title:s.title, notes:s.notes, location:s.location, trade:s.trade } });
   unbusy();
@@ -1257,6 +1268,7 @@ function renderAccount(){
     <div class="group"><label class="cell"><span class="cl">Name</span><input class="cv" id="acc-name" value="${esc(S.me.name)}" placeholder="Your name"></label><div class="cell"><span class="cl">Email</span><span class="cv">${esc(S.me.email)}</span></div>${S.me.role === 'admin' ? `<label class="cell"><span class="cl">Practice</span><input class="cv" id="acc-practice" value="${esc(S.practice)}" placeholder="Your practice name"></label>` : (S.practice ? `<div class="cell"><span class="cl">Practice</span><span class="cv">${esc(S.practice)}</span></div>` : '')}<div class="cell"><span class="cl">Access</span><span class="cv">${team() ? 'Practice team' : 'Responsible party'}</span></div></div>
     <form class="group" id="pwForm"><label class="cell"><input class="cfull" id="pw1" type="password" autocomplete="new-password" placeholder="New password (8+ characters)" minlength="8"></label><label class="cell"><input class="cfull" id="pw2" type="password" autocomplete="new-password" placeholder="Confirm new password"></label><button class="cell center" type="submit">Change Password</button></form>
     ${S.me.role === 'admin' ? `<div class="group-h">Add a team member</div><form class="group" id="teamForm"><label class="cell"><input class="cfull" id="tm-name" placeholder="Name" required></label><label class="cell"><input class="cfull" id="tm-email" type="email" placeholder="Work email" required></label><button class="cell center" type="submit">Add Team Member</button></form><p class="group-f">They get full access to every project. You'll be shown a temporary password to pass on.</p>` : ''}
+    ${team() ? `<div class="group-h">AI assist</div><div class="group"><button class="cell center" data-act="ai-toggle">${aiOn() ? 'Turn Off AI Assist' : 'Turn On AI Assist'}</button></div><p class="group-f">When on, Refine and Suggest Method send a snag\u2019s title, description, location and trade to Anthropic (Claude). Photos, drawings, room numbers, names and contact details are never sent. <a href="https://ksar27.github.io/pin-site/#privacy" target="_blank" rel="noopener">Privacy policy</a></p>` : ''}
     <div class="group"><button class="cell danger" data-act="sign-out">Sign Out</button></div>`, 'Account');
 }
 
@@ -1289,6 +1301,7 @@ document.addEventListener('click', async e => {
     'photo': () => { S.lb = { i:+t.dataset.i, color:'#FF3B30', tool:'pen' }; renderLB(); },
     'show-on-plan': () => { const s = cur(); S.planId = s.plan_id; closeSheet(); S.tab = 'plans'; renderProject(); },
     'ai-refine': () => ai('refine'), 'ai-remedy': () => ai('remedy'),
+    'ai-toggle': async () => { if (aiOn()){ try { localStorage.removeItem(AI_KEY); } catch (e) {} toast('AI assist turned off'); renderAccount(); } else if (await aiConsent()){ toast('AI assist turned on'); renderAccount(); } },
     'dictate': () => dictate(t),
     'post': post, 'notify': notify, 'mark-fixed': openReply,
     'back-to-snag': () => { stopDictation(); S.sheet = { kind:'snag', id:S.sheet.id }; renderSheet(); },
